@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import Productos from '../src/componentes/Productos'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    //crear un estado inicial de productos
+    state = {
+        productos: [
+            { nombre: 'Tomate', precio: 1500, img: '/productos/tomate.jpg' },
+            { nombre: 'Arbejas', precio: 2500, img: '/productos/arbejas.jpg' },
+            { nombre: 'Lechuga', precio: 500, img: '/productos/lechuga.jpg' }
+        ]
+    }
+
+    render(){
+        return (
+            <>
+                <div>
+                    <Productos 
+                        agregarItems={() => console.log('test')}
+                        productos={this.state.productos}
+                    />
+                </div>
+            </>
+        )
+    }
+
 }
+
+//visualizar un objeton json en el template
+//<pre>{JSON.stringify(this.state.productos, null, 2)}</pre>
+
 
 export default App;

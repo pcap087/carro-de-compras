@@ -1,0 +1,22 @@
+import { Component } from 'react';
+import Producto from './Producto';
+import '../estilos/producto.css';
+
+class Productos extends Component {
+    render(){
+        const { agregarItems, productos} = this.props
+
+        return (
+            <div className='list-products'>
+                {productos.map(producto => 
+                    <Producto
+                        agregarItems = {agregarItems}
+                        key = {producto.nombre}
+                        producto = {producto}
+                    />)}
+            </div>
+        )
+    }
+}
+
+export default Productos;
