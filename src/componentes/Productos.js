@@ -4,13 +4,13 @@ import '../estilos/producto.css';
 
 class Productos extends Component {
     render(){
-        const { agregarItems, productos} = this.props
+        const { agregarProducto, productos} = this.props
 
         return (
             <div className='list-products'>
                 {productos.map(producto => 
                     <Producto
-                        agregarItems = {agregarItems}
+                        agregarProducto = {agregarProducto}
                         key = {producto.nombre}
                         producto = {producto}
                     />)}
