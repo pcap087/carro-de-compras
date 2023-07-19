@@ -7,14 +7,14 @@ class Producto extends Component{
         const {producto, agregarProducto} = this.props
 
         return (
-           <div className='product'>
+            <div className='product'>
                 <img className='img' src={producto.img} alt={producto.nombre} />
                 <h3>{producto.nombre}</h3>
                 <p>{producto.precio}</p>
                 <Button onClick={() => agregarProducto(producto)}>
                     Agregar
                 </Button>
-           </div>
+            </div>
         )
     }
 

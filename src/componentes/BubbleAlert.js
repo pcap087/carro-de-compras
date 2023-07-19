@@ -7,11 +7,13 @@ class BubbleAlert extends Component {
         if(!n){ 
             return ''
         }
-        return n > 9 ? '9+' : n 
+        return n > 9 //si n es mayor a 9 entonces aparecer por defecto 9+ sino el valor de n
+            ? '9+' 
+            : n 
     }
 
     render(){
-        const { value } = this.props
+        const { value } = this.props;
 
         return (
             <span className="bubbleAlert">
