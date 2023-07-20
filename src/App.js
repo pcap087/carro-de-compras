@@ -12,7 +12,8 @@ class App extends Component {
             { nombre: 'Arbejas', precio: 2500, img: '/productos/arbejas.jpg' },
             { nombre: 'Lechuga', precio: 500, img: '/productos/lechuga.jpg' }
         ],
-        carro: []
+        carro: [],
+        esCarroVisible: false
     }
 
     agregarProducto = (producto) => {
@@ -36,10 +37,23 @@ class App extends Component {
         })
     }
 
+    //cambia el estado de la funcion de false a true
+    mostrarCarroBtn = () => {
+        if(!this.state.carro.length){ //cuando no tengamos elementos en el carro, no hace nada
+            return
+        }
+        this.setState({ esCarroVisible: !this.state.esCarroVisible })
+    } 
+
     render(){
+        const { esCarroVisible } = this.state
         return (
             <>
-                <Navbar carro = {this.state.carro}/>
+                <Navbar 
+                    carro = {this.state.carro}
+                    esCarroVisible = { esCarroVisible }
+                    mostrarCarroBtn = { this.mostrarCarroBtn }
+                />
                 <div>
                     <Layout>
                         <Title />

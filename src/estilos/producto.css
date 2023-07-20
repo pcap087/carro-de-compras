@@ -78,3 +78,28 @@
     font-size: 0.9rem;
     width: 20px;
 }
+
+.detalleCarro {
+    background-color: #fff;
+    position: absolute;
+    margin-top: 30px;
+    box-shadow: 1px 5px 5px rgb(0,0,0,0.3);
+    width: 300px;
+    right: 50px;
+}
+
+.ul-det-carro{
+    margin: 0px;
+    padding: 0px;
+}
+
+.li-det-carro {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: solid 1px #aaa;
+
+
+ }
